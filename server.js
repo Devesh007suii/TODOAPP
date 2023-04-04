@@ -17,9 +17,11 @@ cloudinary.config({
 // we should always connect database after connecting config
 
 
+
 mongoose.connect(process.env.MONGO_URI).then(()=>{console.log(`MongoDb connected`)})
+console.log(process.env.MONGO_URI);
 
-
+  
 const port = process.env.PORT || 4000;
 
 app.set('port', port);
