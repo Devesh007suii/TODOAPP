@@ -13,7 +13,6 @@ export const register = async (req,res)=>{
         const password = req.body.password
 
 
-        console.log(email)
         
         const avatarTempFilePath = req.files.avatar.tempFilePath;
 
@@ -35,6 +34,8 @@ export const register = async (req,res)=>{
     const mycloud = await cloudinary.v2.uploader.upload(avatarTempFilePath,{
         folder: "todoApp",
     })
+    
+    console.log(mycloud)
 
     fs.rmSync("./tmp", { recursive: true});
     // if i put just fs.rmSync("./tmp") it wont delete
