@@ -26,6 +26,11 @@ const port = process.env.PORT || 4000;
 
 app.set('port', port);
 
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
+});
+
+
 const server = app.listen(port, () => {
   console.log(`Server is running on PORT ${server.address().port}`);
 });
